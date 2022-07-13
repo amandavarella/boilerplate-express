@@ -2,6 +2,8 @@ require('dotenv').config();
 
 let express = require('express');
 let app = express();
+let bodyParser = require('bodyParser');
+
 
 console.log ("Hello Worlda");
 console.log(__dirname);
@@ -46,22 +48,7 @@ app.get("/name", function(req, res){
     res.json({"name": `${req.query.first} ${req.query.last}`});
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+app.use(bodyParser.urlencoded({extended: false}));
 
 
 
