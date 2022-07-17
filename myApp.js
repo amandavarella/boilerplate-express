@@ -51,7 +51,9 @@ app.get("/name", function(req, res){
 app.use(bodyParser.urlencoded({extended: false}));
 
 
-
+app.post("/name", function(req, res){
+    res.json({"name": `${req.body.first} ${req.body.last}`});
+});
 
 
  module.exports = app;
